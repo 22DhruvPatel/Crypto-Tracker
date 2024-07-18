@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Crypto - Price Check</title>
+  <style>
+    div {
+      text-align: center;
+      width: 50%;
+      margin: auto;
+      padding: 10px;
+      
+      /* border: 1px solid black; */
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    }
+    button {
+      color: white;
+      background-color: blue;
+      padding: 5px;
+      border-radius: 10px;
+      border: none;
+      margin: 2%;
+    }
+    input{
+      line-height: 2em;
+      margin: 2%;
+    }
+    button:hover {
+      color: blue;
+      background-color: white;
+    }
+    #container {
+      display: grid;
+      padding: 10px;
+    }
+    label{
+      margin: 1%;
+      line-height: 1em;
+    }
+    h1 {
+      color: blue;
+    }
+  </style>
+</head>
+<body>
+  <div>
+    <form action="/price" method="get">
+      <h1>CryptoTracker</h1>
+      <div id="container">
+        <label><h2>Crypto</h2></label>
+        <input type="text" name="cryptoName" placeholder="Enter crypto symbol (e.g., BTC-USD)" required>
+        <button type="submit">Check Price</button>
+      </div>
+    </form>
+    <% if (typeof price !== 'undefined') { %>
+      <h2>Price:</h2>
+      <p><%= price %></p>
+    <% } %>
+    <p><i><strong>Welcome to CryptoTracker, your go-to platform for real-time cryptocurrency price checking. Stay updated with the latest market trends, track your favorite coins, and make informed investment decisions with our user-friendly interface. Whether you're a seasoned trader or a crypto novice, CryptoTracker provides accurate and up-to-date information at your fingertips. Join us and take control of your crypto journey!</strong></i></p>
+  </div>
+</body>
+</html>
